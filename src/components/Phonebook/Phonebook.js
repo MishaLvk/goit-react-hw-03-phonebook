@@ -1,8 +1,9 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
-import ContactForm from './ContactForm';
-import Filter from './Filter';
-import ContactList from './ContactList';
+import ContactForm from 'components/ContactForm/ContactForm';
+import Filter from 'components/Filter/Filter';
+import ContactList from 'components/ContactList/ContactList';
+import { Container } from './PhoneBook.styled';
 
 class Phonebook extends React.Component {
   state = {
@@ -75,7 +76,7 @@ class Phonebook extends React.Component {
   render() {
     const filterContacts = this.getfilterContacts();
     return (
-      <div className="Phonebook_container">
+      <Container className="Phonebook_container">
         <h1>Phonebook</h1>
         <ContactForm addContacts={this.addContacts} />
         <h2>Contacts</h2>
@@ -87,7 +88,7 @@ class Phonebook extends React.Component {
           filterContacts={filterContacts}
           deleteContact={this.deleteContact}
         />
-      </div>
+      </Container>
     );
   }
 }

@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Phonebook.css';
+import { ListContact, ContactList_list } from './ContactList.styled';
 
 const ContactList = ({ filterContacts, deleteContact }) => (
-  <ul className="ContactList">
+  <ListContact className="ContactList">
     {filterContacts.map(contact => (
-      <li className="ContactList_list" key={contact.key}>
+      <ContactList_list className="ContactList_list" key={contact.key}>
         {contact.name}: {contact.number}
         <button onClick={() => deleteContact(contact.key)}>Delete</button>
-      </li>
+      </ContactList_list>
     ))}
-  </ul>
+  </ListContact>
 );
 
 export default ContactList;
