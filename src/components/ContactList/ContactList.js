@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ListContact, ContactList_list } from './ContactList.styled';
+import { ListContact, ContactListList } from './ContactList.styled';
 
 const ContactList = ({ filterContacts, deleteContact }) => (
   <ListContact className="ContactList">
     {filterContacts.map(contact => (
-      <ContactList_list className="ContactList_list" key={contact.key}>
+      <ContactListList className="ContactList_list" key={contact.key}>
         {contact.name}: {contact.number}
         <button onClick={() => deleteContact(contact.key)}>Delete</button>
-      </ContactList_list>
+      </ContactListList>
     ))}
   </ListContact>
 );
